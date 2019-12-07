@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -18,4 +19,15 @@ module.exports = {
         ],
     },
     // devtool: 'source-map',
+    devServer: {
+        watchContentBase: true,
+        contentBase: path.join(__dirname, './src'),
+        publicPath: '/',
+        compress: true,
+        port: 9000,
+        quiet: true, // 关闭信息
+    },
+    plugins: [
+        new HtmlWebpackPlugin({template: './src/index.html'})
+    ],
 };

@@ -13,5 +13,5 @@ libs.forEach((item) => {
     window[LIB_NAME][item.name] = item.lib;
 })
 
-window[LIB_NAME].lib = {
+window[LIB_NAME].utils = {
 };
