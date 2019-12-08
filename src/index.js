@@ -1,3 +1,5 @@
+import currency from './lib/currency';
+
 const LIB_NAME = 'hutils';
 
 window[LIB_NAME] = {};
@@ -14,4 +16,5 @@ libs.forEach((item) => {
 })
 
 window[LIB_NAME].utils = {
+    currency,
 };

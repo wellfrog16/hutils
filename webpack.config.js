@@ -28,6 +28,9 @@ module.exports = {
         quiet: true, // 关闭信息
     },
     plugins: [
-        new HtmlWebpackPlugin({template: './src/index.html'})
+        new HtmlWebpackPlugin({
+            template: './template/index.html',
+            inject: 'head',
+        }),
     ],
 };
