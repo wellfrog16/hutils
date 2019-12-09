@@ -1,3 +1,11 @@
+/// <reference types="lodash" />
+/// <reference types="crypto-js" />
+/// <reference path="./moment.d.ts" />
+
+console.log(_.isArray([]));
+console.log(CryptoJS);
+// console.log(window.moment);
+// console.log(moment());
 // import currency from './lib/currency';
 
 // const LIB_NAME = 'hutils';
@@ -24,7 +32,7 @@ function qq(a: string) {
 }
 
 qq('asdasd');
-qq('asdasd11111');
+// qq('asdasd11111');
 
 class Greeter {
     constructor(message: string) {

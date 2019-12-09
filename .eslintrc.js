@@ -17,6 +17,7 @@ module.exports = {
         'no-param-reassign': 0,
         // 'no-param-reassign': [2, { 'props': true, 'ignorePropertyModificationsFor': ['state', 'item', 'el', 'params'] }], // 允许vuex里的state，备用item, el, params
         '@typescript-eslint/indent': ['error', 4], // 缩进风格
+        'spaced-comment': [2, 'always', { 'markers': ['/'] }], // 三斜杠typescript类型引用
 
         // 不知道是否是hack了@的原因，无法正确识别到模块，暂时关闭，等待create-react-app官方的@
         // hack方法tsconfig extend了 tsconfig-extra.json来实现@
