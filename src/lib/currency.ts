@@ -9,21 +9,18 @@ const { _ } = window;
  * @param {number} decimals 小数位
  * @return {string}
  */
-export default function currency(money, units = '', decimals) {
+export default function currency(money: number, units: string = '', decimals?: number): string {
     let decimal = decimals;
-    let val = vals;
-    let unit = units;
+    let val = money;
 
-    if (decimal === undefined || decimal === null) {
+    if (decimal === undefined) {
         const arr = (`${val}`).split('.');
         decimal = arr.length === 2 ? arr[1].length : 0;
     }
     const digitsRE = /(\d{3})(?=\d)/g;
-    val = parseFloat(val);
+    val = parseFloat(`${val}`);
     // 数值判断
     if (!_.isFinite(val) || (!val && val !== 0)) return '';
-    unit = unit != null ? unit : '$';
-    decimal = decimal != null ? decimal : 2;
     const stringified = Math.abs(val).toFixed(decimal);
     const intx = decimal
         ? stringified.slice(0, -1 - decimal)
@@ -36,7 +33,7 @@ export default function currency(money, units = '', decimals) {
         ? stringified.slice(-1 - decimal)
         : '';
     const sign = val < 0 ? '-' : '';
-    return sign + unit + head
+    return sign + units + head
         + intx.slice(i).replace(digitsRE, '$1,')
         + floatx;
 }

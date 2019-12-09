@@ -1,61 +1,79 @@
 /// <reference types="lodash" />
 /// <reference types="crypto-js" />
-/// <reference path="./moment.d.ts" />
+/// <reference path="./types/moment.d.ts" />
 
-console.log(_.isArray([]));
-console.log(CryptoJS);
+import secretPhoneNum from './lib/secretPhoneNum';
+import currency from './lib/currency';
+import delay from './lib/delay';
+import imageSize from './lib/imageSize';
+
+// console.log(_.isArray([]));
+// console.log(CryptoJS);
 // console.log(window.moment);
-// console.log(moment());
+// console.log(moment().toString());
 // import currency from './lib/currency';
 
-// const LIB_NAME = 'hutils';
+console.log(secretPhoneNum(11111111111));
+console.log(currency(111.2222, ''));
+delay().then(() => {
+    console.log(999);
+});
+// imageSize('https://shared-https.ydstatic.com/dict/v2016/result/logo.png')
+//     .then((size) => {
+//         console.log(size);
+//     });
 
-// window[LIB_NAME] = {};
+const LIB_NAME = 'hutils';
 
-// const libs = [
-//     { name: '_', lib: window._ },
-//     { name: 'moment', lib: window.moment },
-//     { name: 'CryptoJS', lib: window.CryptoJS },
-// ];
+window[LIB_NAME] = {};
 
-// libs.forEach((item) => {
-//     if (!item.lib) { throw `hutils: ${item.name} is required.` }
-//     window[LIB_NAME][item.name] = item.lib;
-// })
+const libs = [
+    { name: '_', lib: window._ },
+    { name: 'moment', lib: window.moment },
+    { name: 'CryptoJS', lib: window.CryptoJS },
+];
 
-// window[LIB_NAME].utils = {
-//     currency,
-// };
+libs.forEach((item) => {
+    if (!item.lib) { throw new Error(`hutils: ${item.name} is required.`); }
+    window[LIB_NAME][item.name] = item.lib;
+});
 
-function qq(a: string) {
-    console.log(a);
-}
+window[LIB_NAME].utils = {
+    currency,
+    secretPhoneNum,
+    delay,
+    imageSize,
+};
 
-qq('asdasd');
+// function qq(a: string) {
+//     console.log(a);
+// }
+
+// qq('asdasd');
 // qq('asdasd11111');
 
-class Greeter {
-    constructor(message: string) {
-        this.greeting = message;
-    }
+// class Greeter {
+//     constructor(message: string) {
+//         this.greeting = message;
+//     }
 
-    greeting: string;
+//     greeting: string;
 
-    greet() {
-        return `hello, ${this.greeting}`;
-    }
-}
+//     greet() {
+//         return `hello, ${this.greeting}`;
+//     }
+// }
 
-const greeter = new Greeter('world');
-console.log(greeter.greet());
+// const greeter = new Greeter('world');
+// console.log(greeter.greet());
 
-interface LabelledValue {
-    label: string;
-}
+// interface LabelledValue {
+//     label: string;
+// }
 
-function printLabel(labelledObj: LabelledValue) {
-    console.log(labelledObj.label);
-}
+// function printLabel(labelledObj: LabelledValue) {
+//     console.log(labelledObj.label);
+// }
 
-const myObj = { size: 10, label: 'Size 10 Object' };
-printLabel(myObj);
+// const myObj = { size: 10, label: 'Size 10 Object' };
+// printLabel(myObj);

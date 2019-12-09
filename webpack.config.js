@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const EslintFriendlyFormatter = require('eslint-friendly-formatter');
 
 module.exports = {
     entry: './src/index.ts',
@@ -14,11 +15,11 @@ module.exports = {
             {
                 test: /\.ts$/,
                 loader: 'eslint-loader',
-                enforce: "pre",
+                enforce: 'pre',
                 include: [path.resolve(__dirname, 'src')], // 指定检查的目录
-                options: {                                 // 这里的配置项参数将会被传递到 eslint 的 CLIEngine 
-                    formatter: require('eslint-friendly-formatter') // 指定错误报告的格式规范
-                }
+                options: { // 这里的配置项参数将会被传递到 eslint 的 CLIEngine
+                    formatter: EslintFriendlyFormatter, // 指定错误报告的格式规范
+                },
             },
             {
                 test: /\.ts?$/,
@@ -28,7 +29,7 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: [".tsx", ".ts", ".js"],
+        extensions: ['.tsx', '.ts', '.js'],
     },
     // devtool: 'source-map',
     devServer: {
