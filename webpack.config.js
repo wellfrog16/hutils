@@ -8,7 +8,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'hutils.js',
         // library: 'hutils',
-        // libraryTarget: 'var',
+        // libraryTarget: 'commonjs2',
     },
     module: {
         rules: [
