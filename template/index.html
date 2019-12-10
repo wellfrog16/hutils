@@ -16,10 +16,13 @@
 
 </head>
 <body>
+    <canvas width="200" height="50" id="mycode"></canvas>
     <script>
         console.log(hutils);
         console.log(hutils._.isArray([]));
         console.log(hutils.utils);
+        hutils.utils.canvasCode(document.querySelector('#mycode'), 5);
+        hutils.utils.autoRootSize();
     </script>
 </body>
 </html>

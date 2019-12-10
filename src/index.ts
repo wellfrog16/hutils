@@ -8,6 +8,9 @@ import delay from './lib/delay';
 import imageSize from './lib/imageSize';
 import randomColor from './lib/randomColor';
 import secretPhoneNum from './lib/secretPhoneNum';
+import removeHTMLTag from './lib/removeHTMLTag';
+import canvasCode from './lib/canvasCode';
+import autoRootSize from './lib/autoRootSize';
 
 // console.log(secretPhoneNum(11111111111));
 // console.log(currency(111.2222, ''));
@@ -19,6 +22,7 @@ import secretPhoneNum from './lib/secretPhoneNum';
 //     .then((size) => {
 //         console.log(size);
 //     });
+console.log(removeHTMLTag('<div>asd<img src=asd1asd>as&nbsp;1d</div>'));
 
 const hutils: any = {};
 
@@ -40,6 +44,8 @@ hutils.utils = {
     imageSize,
     randomColor,
     deepMerge,
+    canvasCode,
+    autoRootSize,
 };
 
 export default hutils;
