@@ -38,6 +38,7 @@ hutils.utils = {
     randomColor,
     deepMerge,
     canvasCode,
+    removeHTMLTag,
     autoRootSize,
 };
 
