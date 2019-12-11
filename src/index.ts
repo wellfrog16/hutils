@@ -15,18 +15,6 @@ import autoRootSize from './lib/autoRootSize';
 // 功能函数
 import storage from './lib/storage';
 
-// console.log(secretPhoneNum(11111111111));
-// console.log(currency(111.2222, ''));
-// delay().then(() => {
-//     console.log(randomColor());
-// });
-// console.log(deepMerge({ a: 1 }, { b: 2 }));
-// imageSize('https://shared-https.ydstatic.com/dict/v2016/result/logo.png')
-//     .then((size) => {
-//         console.log(size);
-//     });
-console.log(removeHTMLTag('<div>asd<img src=asd1asd>as&nbsp;1d</div>'));
-
 const hutils: any = {};
 
 const libs = [
