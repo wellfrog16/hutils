@@ -9,6 +9,9 @@ import imageSize from './lib/imageSize';
 import randomColor from './lib/randomColor';
 import secretPhoneNum from './lib/secretPhoneNum';
 
+// 功能函数
+import storage from './lib/storage';
+
 // console.log(secretPhoneNum(11111111111));
 // console.log(currency(111.2222, ''));
 // delay().then(() => {
@@ -26,6 +29,8 @@ const libs = [
     { name: '_', lib: window._ },
     { name: 'moment', lib: window.moment },
     { name: 'CryptoJS', lib: window.CryptoJS },
+    // 自定义
+    { name: 'storage', lib: storage },
 ];
 
 libs.forEach((item) => {
@@ -43,5 +48,7 @@ hutils.utils = {
 };
 
 export default hutils;
+
+// hack for eslint
 const LIB_NAME = 'hutils';
-window[LIB_NAME] = hutils; // hack
+window[LIB_NAME] = hutils;
