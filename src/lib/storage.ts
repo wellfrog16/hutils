@@ -3,7 +3,7 @@ import xtypeof from './typeof';
 const { _, moment, CryptoJS } = window;
 
 if (!_) { throw new Error('storage依赖lodash'); }
-if (!moment) { throw new Error('moment'); }
+if (!moment) { throw new Error('storage依赖moment'); }
 if (!CryptoJS) { throw new Error('storage依赖CryptoJS'); }
 
 const SECRET_KEY = 'frog';
